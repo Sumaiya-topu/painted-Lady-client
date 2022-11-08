@@ -1,20 +1,18 @@
 import React from 'react';
-import banner from "../../../assets/images/banner_ing.jpg";
+import banner from '../../../assets/images/banner_ing.jpg'
 import AboutUs from '../../AboutUs/AboutUs';
 import Pricing from '../../Pricing/Pricing';
 import './Home.css';
 const Home = () => {
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-100">
+        <div className=''>
+            <div className=" home hero min-h-screen bg-base-100">
                 <div className="hero-content flex-col lg:flex-row">
-                    <div className="p-10 ">
-                        <img src={banner} alt='' className='shadow-lg ' />
-                    </div>
+
                     <div>
-                        <h1 className="text-3xl font-bold">Painted-Lady nail Salon <br /><span className=' text-rose-800 text-6xl '>Creating Beauty</span></h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary text-white text-lg font-bold">Get Appointment</button>
+                        <h1 className="text-3xl font-bold text-white">PAINTED-<span className='text-rose-600'>LADY</span> nail Salon <br /><span className=' text-rose-600 text-6xl '>Creating Beauty</span></h1>
+                        <p className="py-6 text-slate-200">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <button className="btn btn-active btn-primary text-white text-lg font-bold">Get Appointment</button>
                     </div>
                 </div>
             </div>

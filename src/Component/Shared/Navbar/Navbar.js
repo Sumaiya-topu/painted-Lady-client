@@ -24,7 +24,7 @@ const Navbar = () => {
                                 <Link to='/signup' className="btn btn-sm btn-primary">Sign up</Link >
                             </ul>
                         </div>
-                        <Link to='/' className="btn btn-ghost normal-case text-4xl font-bold">PAINTED-<span className='text-rose-600'>LADY</span></Link>
+                        <Link to='/' className="btn btn-ghost text-4xl font-bold">PAINTED-<span className='text-rose-600'>LADY</span></Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal p-0">
@@ -33,7 +33,6 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end hidden lg:flex ">
                         <Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
-                        <Link to='/signup' className="btn btn-sm  text-white">Sign up</Link >
                     </div>
                 </div>
             </div>
