@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import router from './Router/Routes/Routes';
 
 function App() {
   return (
-    <div>
+    <div data-theme="valentine" className='max-w-screen-xl mx-auto'>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
