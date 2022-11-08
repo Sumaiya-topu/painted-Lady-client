@@ -5,11 +5,11 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
-        <li><Link to='/'>About Us</Link></li>
+        <li><Link to='/services'>Services</Link></li>
     </>
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-200">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,6 +19,8 @@ const Navbar = () => {
                             {
                                 menuItems
                             }
+                            <Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                            <Link to='/signup' className="btn btn-sm btn-primary">Sign up</Link >
                         </ul>
                     </div>
                     <Link to='/' className="btn btn-ghost normal-case text-xl">PAINTED-LADY</Link>
@@ -28,8 +30,9 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link to='/services' className="btn">Services</Link >
+                <div className="navbar-end hidden lg:flex ">
+                    <Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                    <Link to='/signup' className="btn btn-sm btn-primary">Sign up</Link >
                 </div>
             </div>
         </div>

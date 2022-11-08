@@ -1,4 +1,6 @@
 import Blog from "../../Component/Blog/Blog";
+import Login from "../../Component/Login/Login";
+import Services from "../../Component/Services/Services";
 import Home from "../../Component/Shared/Home/Home";
 import Main from "../../Layout/Main";
 
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
 
