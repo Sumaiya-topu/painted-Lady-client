@@ -9,7 +9,7 @@ const AboutUs = () => {
                 <div className='p-10 '>
                     <h1 className="text-5xl font-bold">About Us</h1>
                     <p className='py-10'>The main purpose of <span>PAINTED-LADY</span> is to primarily offer nail care services such as manicures, pedicures, and nail enhancements. also offer skin care services. Manicures are also offered by general beauty salons, spas, and hotels.</p>
-                    <button className="btn btn-primary">Read more </button>
+                    <button className="btn btn-primary text-white">Read more </button>
                 </div>
             </div>
         </div>
