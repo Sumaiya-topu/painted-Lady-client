@@ -1,5 +1,6 @@
 import Blog from "../../Component/Blog/Blog";
 import Login from "../../Component/Login/Login";
+import ServiceDetails from "../../Component/ServiceDetails/ServiceDetails";
 import Services from "../../Component/Services/Services";
 import Home from "../../Component/Shared/Home/Home";
 import SignUp from "../../Component/SignUp/SignUp";
@@ -15,21 +16,34 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => {
+                    return fetch('http://localhost:5000/limitedservice');
+                }
             },
             {
                 path: '/home',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => {
+                    return fetch('http://localhost:5000/limitedservice');
+                }
             },
             {
                 path: '/blog',
                 element: <Blog></Blog>
             },
             {
-                path: '/services',
+                path: '/services/',
                 element: <Services></Services>,
                 loader: () => {
                     return fetch('http://localhost:5000/services');
+                }
+            },
+            {
+                path: '/services/:id',
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => {
+                    return fetch(`http://localhost:5000/services/${params.id}`);
                 }
             },
             {

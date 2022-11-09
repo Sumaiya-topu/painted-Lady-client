@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import banner from '../../../assets/images/banner_ing.jpg'
 import AboutUs from '../../AboutUs/AboutUs';
 import Pricing from '../../Pricing/Pricing';
+import Service from '../../Services/Service';
 import './Home.css';
 const Home = () => {
+    const services = useLoaderData();
+    console.log(services);
     return (
         <div className=''>
             <div className=" home hero min-h-screen bg-base-100">
@@ -15,6 +19,14 @@ const Home = () => {
                         <button className="btn bg-rose-700 text-slate-200 text-lg font-bold">Get Appointment</button>
                     </div>
                 </div>
+            </div>
+            <div className='mt-10 w-full  grid grid-cols-1 lg:grid-cols-3 justify-center'>
+                {
+                    services.map(service => <Service service={service}></Service>)
+                }
+            </div>
+            <div className='text-center mb-10'>
+                <Link to='/services'><button className="btn btn-outline btn-primary rounded-sm">See More Services</button></Link>
             </div>
             <AboutUs></AboutUs>
             <Pricing></Pricing>

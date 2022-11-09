@@ -1,16 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 
 
 const Service = (params) => {
-
-    const { name, picture, price, rating, details } = params.service;
-    console.log(name);
+    const { _id, name, picture, price, rating, details } = params.service;
 
     return (
         <div>
-            <div className='p-5'>
+            <div className='p-4'>
                 <div className='flex justify-center'>
                     <div className=' bg-slate-300 mt-10 w-52 h-52 border rounded-full border-slate-900'>
                         <img src={picture} className=" w-full p-10 rounded-full" alt="" />
@@ -22,8 +20,8 @@ const Service = (params) => {
                         <p className='text-rose-600 text-3xl'>{price}</p>
                         <p className='text-rose-600 font-bold'><FaStar className=' ml-1 '></FaStar><span className='text-slate-400'>{rating}</span></p>
                     </div>
-                    <p className=' text-justify lg:px-10'>{details.substring(0, 100)}... <Link to='/servicedetails' className='text-rose-600'>See more</Link></p>
-                    <div className='text-center p-10'><button className="btn btn-active btn-primary text-center text-white rounded-sm ">Get Appointment</button></div>
+                    <p className='lg:px-10 text-center'>{details.substring(0, 100)}... <Link to={`/services/${_id}`} className='text-rose-600'>See more</Link></p>
+                    <div className='text-center p-10'><Link to={`/services/${_id}`} ><button className="btn btn-active btn-primary text-center text-white rounded-sm ">Get Appointment</button></Link></div>
 
                 </div>
             </div>
