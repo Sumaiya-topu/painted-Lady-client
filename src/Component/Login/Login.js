@@ -44,10 +44,10 @@ const Login = () => {
         <div className="login hero min-h-screen bg-base-200 ">
             <div className="hero-content w-3/4 mx-auto flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl text-base-100 font-bold">Login now!</h1>
-                    <p className="py-6 text-base-100 shadow-lg">Give your nails a sweet treat. Your nails deserves better.</p>
+                    <h1 className="text-5xl text-orange-400 font-bold">Login now!</h1>
+                    <p className="py-6 text-slate-100 shadow-lg">Give your nails a sweet treat. Your nails deserves better.</p>
                     <p className='text-white'>Don't have account with us? <Link className='text-rose-400' to='/signup' >Sign up</Link ></p>
-                    <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary">Sign In with Google</button>
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary mt-5">Sign In with Google</button>
 
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

@@ -4,8 +4,8 @@ import './Blog.css';
 
 const Blog = () => {
     return (
-        <div className='  blog p-5'>
-            <div className=' w-11/12 mx-auto mb-10 p-10 shadow-xl shadow-rose-100'>
+        <div className='  blog lg:p-5'>
+            <div className=' w-11/12 mx-auto mb-10 p-10 shadow-xl shadow-xl'>
                 <h1 className='text-3xl text-rose-500 font-semibold py-5  '>What is JWT? and How does it work?</h1>
                 <p className='text-justify'>JSON Web Token is a proposed Internet standard for creating data with optional signature and/or optional encryption whose payload holds JSON that asserts some number of claims. The tokens are signed either using a private secret or a public/private key.
                     <br />
@@ -28,12 +28,12 @@ const Blog = () => {
                     The signature ensures that the token hasn’t been altered. The party that creates the JWT signs the header and payload with a secret that is known to both the issuer and receiver, or with a private key known only to the sender. When the token is used, the receiving party verifies that the header and payload match the signature.
                 </p>
             </div>
-            <div className='w-11/12 mx-auto my-5 p-10 shadow-lg shadow-rose-100'>
+            <div className='w-11/12 mx-auto my-5 p-10 shadow-lg shadow-xl'>
                 <h1 className='text-3xl text-rose-500 font-semibold pb-5'>Difference between SQL and NoSQL :</h1>
                 <img className='mx-auto ' src={blogImg} alt="" />
             </div>
 
-            <div className='w-11/12 mx-auto mt-10 p-10 shadow-lg shadow-rose-100'>
+            <div className='w-11/12 mx-auto mt-10 p-10 shadow-lg shadow-xl'>
                 <h1 className='text-3xl text-rose-500 font-semibold pb-5 '>What is the difference between javascript and NodeJS?</h1>
                 <p className='text-justify'>1.
                     Javascript is a programming language that is used for writing scripts on the website.
@@ -54,7 +54,7 @@ const Blog = () => {
                     Nodejs is written in C, C++ and Javascript.
                 </p>
             </div>
-            <div className='w-11/12 mx-auto p-10 shadow-lg  shadow-rose-100'>
+            <div className='w-11/12 mx-auto p-10 shadow-lg  shadow-xl'>
                 <h1 className='text-3xl text-rose-500 font-semibold py-5 '>How does NodeJS handle multiple requests at the same time?</h1>
                 <p className=' text-justify '>1.
                     How NodeJS handle multiple client requests? NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them

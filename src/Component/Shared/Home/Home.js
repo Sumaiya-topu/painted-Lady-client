@@ -10,9 +10,9 @@ const Home = () => {
                 <div className="hero-content flex-col lg:flex-row">
 
                     <div>
-                        <h1 className="text-3xl font-bold text-white">PAINTED-<span className='text-rose-600'>LADY</span> nail Salon <br /><span className=' text-rose-600 text-6xl '>Creating Beauty</span></h1>
+                        <h1 className="text-3xl font-bold text-slate-200">PAINTED-<span className='text-rose-600'>LADY</span> nail Salon <br /><span className=' text-rose-600 text-6xl '>Creating Beauty</span></h1>
                         <p className="py-6 text-slate-200">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-active btn-primary text-white text-lg font-bold">Get Appointment</button>
+                        <button className="btn bg-rose-700 text-slate-200 text-lg font-bold">Get Appointment</button>
                     </div>
                 </div>
             </div>
