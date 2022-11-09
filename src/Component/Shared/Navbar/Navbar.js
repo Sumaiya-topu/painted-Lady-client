@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Navbar = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
@@ -23,7 +28,7 @@ const Navbar = () => {
                                     menuItems
                                 }
                                 {
-                                    user ? <><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name} <Link className=' text-rose-700 ' to='/logout'>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                                    user ? <><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name} <Link onClick={handleLogOut} className=' text-rose-700 ' to='/'>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
                                     </>
                                 }
 
@@ -41,7 +46,7 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end hidden lg:flex ">
                         {
-                            user ? <><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name}<Link to='/logout' className='text-rose-700 pl-2 pt-2 font-bold '>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                            user ? <><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name}<Link onClick={handleLogOut} to='/' className='text-rose-700 pl-2 pt-2 font-bold '>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
                             </>
                         }
                     </div>
