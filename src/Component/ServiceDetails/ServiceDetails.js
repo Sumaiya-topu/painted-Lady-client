@@ -1,11 +1,11 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 
 
 const ServiceDetails = () => {
     const service = useLoaderData();
-    const { name, picture, rating, price, details } = service;
+    const { _id, name, picture, rating, price, details } = service;
     console.log(service);
     return (
         <div>
@@ -23,7 +23,11 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
+            <div className='text-center p-10'>
+                <p>Did you get our services? Share your thoughts</p>
+                <Link to={`/services/${_id}/review`}><button className="btn btn-outline btn-success">Add Review</button></Link>
 
+            </div>
             <div>
 
             </div>
