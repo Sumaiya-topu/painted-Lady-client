@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext);
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
@@ -20,8 +22,12 @@ const Navbar = () => {
                                 {
                                     menuItems
                                 }
-                                <Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
-                                <Link to='/signup' className="btn btn-sm btn-primary">Sign up</Link >
+                                {
+                                    user ? <><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name} <Link className=' text-rose-700 ' to='/logout'>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                                    </>
+                                }
+
+
                             </ul>
                         </div>
                         <Link to='/' className="btn btn-ghost text-4xl font-bold">PAINTED-<span className='text-rose-600'>LADY</span></Link>
@@ -29,10 +35,15 @@ const Navbar = () => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal p-0">
                             {menuItems}
+
+
                         </ul>
                     </div>
                     <div className="navbar-end hidden lg:flex ">
-                        <Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                        {
+                            user ? <><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name}<Link to='/logout' className='text-rose-700 pl-2 pt-2 font-bold '>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                            </>
+                        }
                     </div>
                 </div>
             </div>
