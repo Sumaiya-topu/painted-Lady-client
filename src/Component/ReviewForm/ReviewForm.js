@@ -30,7 +30,7 @@ const ReviewForm = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('user added succesfully');
+                    alert('Review added succesfully.To check your review with others go to previous page');
                     event.target.reset();
                 }
             })

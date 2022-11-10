@@ -1,4 +1,5 @@
 import Blog from "../../Component/Blog/Blog";
+import EditedReview from "../../Component/EditedReview/EditedReview";
 import Login from "../../Component/Login/Login";
 import MyReviews from "../../Component/MyReviews/MyReviews";
 import PrivateRoute from "../../Component/PrivateRoute/PrivateRoute";
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
             {
                 path: '/myreviews',
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            },
+            {
+                path: '/myreviews/editReview',
+                element: <EditedReview></EditedReview>
             }
         ]
 

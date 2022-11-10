@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MyReviews = (params) => {
-    const { post_id, reviewText, userName, userPhoto } = params.review;
+    console.log(params)
+    const { handleDelete } = params;
+    const { _id, post_id, reviewText, userName, userPhoto } = params.review;
     console.log(post_id);
     const [service, setServices] = useState([])
     useEffect(() => {
@@ -39,8 +42,8 @@ const MyReviews = (params) => {
                         </div>
                     </div>
                     <div className=' text-end '>
-                        <button className="btn btn-outline mr-2">Edit</button>
-                        <button className="btn btn-outline btn-error">Delete</button>
+                        <button className="btn btn-outline mr-2"><Link to='/myreviews/editReview'>Edit</Link></button>
+                        <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-error">Delete</button>
                     </div>
 
 
