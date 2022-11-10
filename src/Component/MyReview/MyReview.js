@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MyReviews = (params) => {
     console.log(params)
-    const { handleDelete } = params;
+    const { handleDelete, review } = params;
     const { _id, post_id, reviewText, userName, userPhoto } = params.review;
     console.log(post_id);
     const [service, setServices] = useState([])
@@ -42,7 +42,7 @@ const MyReviews = (params) => {
                         </div>
                     </div>
                     <div className=' text-end '>
-                        <button className="btn btn-outline mr-2"><Link to='/myreviews/editReview'>Edit</Link></button>
+                        <button className="btn btn-outline mr-2"><Link to={`/myreviews/editReview/${_id}`} value={review}>Edit</Link></button>
                         <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-error">Delete</button>
                     </div>
 
