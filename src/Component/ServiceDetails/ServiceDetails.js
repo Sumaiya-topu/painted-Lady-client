@@ -6,14 +6,15 @@ import UserReview from '../UserReview/UserReview';
 
 const ServiceDetails = () => {
     const [reviews, setReviews] = useState([]);
+    const service = useLoaderData();
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch(`http://localhost:5000/review?postId=${service._id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, [service._id])
 
 
-    const service = useLoaderData();
+
     const { _id, name, picture, rating, price, details } = service;
     return (
         <div>
