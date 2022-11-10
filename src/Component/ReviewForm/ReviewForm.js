@@ -1,14 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import review from '../../assets/images/review.webp'
+import { AuthContext } from '../../Context/AuthProvider';
 
 const ReviewForm = () => {
+    const { user } = useContext(AuthContext);
+    const service = useLoaderData();
+    const { _id } = service;
+    console.log(user);
     const handleReview = (event) => {
         event.preventDefault();
         const form = event.target;
-        const reviewText = form.reviewText.value;
-        console.log(reviewText);
-        form.reset();
+        console.log(form);
+        const userReview = {
+            post_id: _id,
+            userName: user.displayName,
+            userPhoto: user.photoURL,
+            userEmail: user.email,
+            reviewText: form.reviewText.value,
+        };
+        console.log(userReview);
+        fetch('http://localhost:5000/services/addreview', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userReview)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    alert('user added succesfully');
+                    event.target.reset();
+                }
+            })
     }
     return (
         <div>

@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import UserReview from '../UserReview/UserReview';
 
 
 const ServiceDetails = () => {
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/review')
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [])
+
+
     const service = useLoaderData();
     const { _id, name, picture, rating, price, details } = service;
-    console.log(service);
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -26,10 +34,11 @@ const ServiceDetails = () => {
             <div className='text-center p-10'>
                 <p>Did you get our services? Share your thoughts</p>
                 <Link to={`/services/${_id}/review`}><button className="btn btn-outline btn-success">Add Review</button></Link>
-
             </div>
             <div>
-
+                {
+                    reviews.map(review => <UserReview review={review}></UserReview>)
+                }
             </div>
         </div>
     );
