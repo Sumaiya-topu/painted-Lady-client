@@ -31,12 +31,17 @@ const MyReviews = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/review?userEmail=${user?.email}`)
             .then(res => res.json())
-            .then(data => setReviews(data))
+            .then(data => {
+                console.log(data);
+                setReviews(data)
+            })
     }, [user.email])
     return (
-        <div>
+        <div className=' h-screen '>
+
             {
-                reviews.map(review => <MyReview review={review} handleDelete={handleDelete}></MyReview>)
+                reviews.length === '0' ? <p className='text-6xl text-center mt-40'>You haven't added any review yet. <br /><span className=' text-rose-600 text-2xl'>To add review go to Services page.</span> </p> : reviews.map(review => <MyReview review={review} handleDelete={handleDelete}></MyReview>)
+
             }
         </div>
     );

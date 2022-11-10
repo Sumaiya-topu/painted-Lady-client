@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import review from '../../assets/images/review.webp'
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const ReviewForm = () => {
+    useTitle('Add-review')
     const { user } = useContext(AuthContext);
     const service = useLoaderData();
     const { _id } = service;

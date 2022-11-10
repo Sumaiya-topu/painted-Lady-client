@@ -1,3 +1,4 @@
+import AddService from "../../Component/AddService/AddService";
 import Blog from "../../Component/Blog/Blog";
 import EditedReview from "../../Component/EditedReview/EditedReview";
 import Login from "../../Component/Login/Login";
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services/:id/review',
-                element: <ReviewForm></ReviewForm>,
+                element: <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>,
                 loader: ({ params }) => {
                     return fetch(`http://localhost:5000/services/${params.id}`);
                 }
@@ -71,10 +72,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myreviews/editReview/:id',
-                element: <EditedReview></EditedReview>,
+                element: <PrivateRoute><EditedReview></EditedReview></PrivateRoute>,
                 loader: async ({ params }) => {
                     return fetch(`http://localhost:5000/review/${params.id}`)
                 }
+
+            },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>,
             }
         ]
 

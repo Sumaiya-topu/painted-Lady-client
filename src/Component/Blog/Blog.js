@@ -1,8 +1,10 @@
 import React from 'react';
 import blogImg from '../../assets/images/Difference-between-SQL-and-NOSQL-2.png'
+import useTitle from '../../hooks/useTitle';
 import './Blog.css';
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div className='  blog lg:p-5'>
             <div className=' w-11/12 mx-auto mb-10 p-10 shadow-xl shadow-xl'>

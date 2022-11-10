@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import UserReview from '../UserReview/UserReview';
+import useTitle from '../../hooks/useTitle';
+
 
 
 const ServiceDetails = () => {
+    useTitle('Service-details')
     const [reviews, setReviews] = useState([]);
     const service = useLoaderData();
     useEffect(() => {

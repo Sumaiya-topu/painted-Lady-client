@@ -3,11 +3,12 @@ import { Result } from 'postcss';
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
     const navigate = useNavigate();
 
-
+    useTitle('SignUp')
 
     const [error, setError] = useState('');
     const { createUser } = useContext(AuthContext)

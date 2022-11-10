@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const MyReviews = (params) => {
+    useTitle('My-reviews')
     console.log(params)
     const { handleDelete, review } = params;
     const { _id, post_id, reviewText, userName, userPhoto } = params.review;
