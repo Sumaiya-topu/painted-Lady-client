@@ -1,5 +1,7 @@
 import Blog from "../../Component/Blog/Blog";
 import Login from "../../Component/Login/Login";
+import MyReviews from "../../Component/MyReviews/MyReviews";
+import PrivateRoute from "../../Component/PrivateRoute/PrivateRoute";
 import ReviewForm from "../../Component/ReviewForm/ReviewForm";
 import ServiceDetails from "../../Component/ServiceDetails/ServiceDetails";
 import Services from "../../Component/Services/Services";
@@ -61,6 +63,10 @@ const router = createBrowserRouter([
                 loader: ({ params }) => {
                     return fetch(`http://localhost:5000/services/${params.id}`);
                 }
+            },
+            {
+                path: '/myreviews',
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             }
         ]
 

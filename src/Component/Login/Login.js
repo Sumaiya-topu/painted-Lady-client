@@ -5,7 +5,9 @@ import { AuthContext } from '../../Context/AuthProvider';
 import './Login.css';
 
 const Login = () => {
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
 
     const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/home');
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error));
     }
@@ -32,7 +34,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                navigate('/home')
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
