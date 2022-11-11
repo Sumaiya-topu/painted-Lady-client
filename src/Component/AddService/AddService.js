@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
+  const navigate = useNavigate();
   const handleAddService = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -30,6 +32,7 @@ const AddService = () => {
       .then((data) => {
         if (data.acknowledged) {
           alert("Service added succesfully");
+          navigate("/services");
         }
       });
   };

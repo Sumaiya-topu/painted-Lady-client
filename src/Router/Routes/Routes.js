@@ -10,78 +10,99 @@ import Services from "../../Component/Services/Services";
 import Home from "../../Component/Shared/Home/Home";
 import SignUp from "../../Component/SignUp/SignUp";
 import Main from "../../Layout/Main";
+import PageNotFound from "../../PageNotFound/PageNotFound";
 
 const { createBrowserRouter } = require("react-router-dom");
 
 //create router
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>,
-                loader: () => {
-                    return fetch('https://painted-lady-server.vercel.app/limitedservice');
-                }
-            },
-            {
-                path: '/home',
-                element: <Home></Home>,
-                loader: () => {
-                    return fetch('https://painted-lady-server.vercel.app/limitedservice');
-                }
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>
-            },
-            {
-                path: '/services/',
-                element: <Services></Services>
-            },
-            {
-                path: '/services/:id',
-                element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => {
-                    return fetch(`https://painted-lady-server.vercel.app/services/${params.id}`);
-                }
-            },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-                path: '/signup',
-                element: <SignUp></SignUp>
-            },
-            {
-                path: '/services/:id/review',
-                element: <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>,
-                loader: ({ params }) => {
-                    return fetch(`https://painted-lady-server.vercel.app/services/${params.id}`);
-                }
-            },
-            {
-                path: '/myreviews',
-                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
-            },
-            {
-                path: '/myreviews/editReview/:id',
-                element: <PrivateRoute><EditedReview></EditedReview></PrivateRoute>,
-                loader: async ({ params }) => {
-                    return fetch(`https://painted-lady-server.vercel.app/review/${params.id}`)
-                }
-            },
-            {
-                path: '/addservice',
-                element: <AddService></AddService>
-            }
-
-        ]
-
-    }
-])
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => {
+          return fetch("https://painted-lady-server.vercel.app/limitedservice");
+        },
+      },
+      {
+        path: "/home",
+        element: <Home></Home>,
+        loader: () => {
+          return fetch("https://painted-lady-server.vercel.app/limitedservice");
+        },
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/services/",
+        element: <Services></Services>,
+      },
+      {
+        path: "/services/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: ({ params }) => {
+          return fetch(
+            `https://painted-lady-server.vercel.app/services/${params.id}`
+          );
+        },
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/services/:id/review",
+        element: (
+          <PrivateRoute>
+            <ReviewForm></ReviewForm>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => {
+          return fetch(
+            `https://painted-lady-server.vercel.app/services/${params.id}`
+          );
+        },
+      },
+      {
+        path: "/myreviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myreviews/editReview/:id",
+        element: (
+          <PrivateRoute>
+            <EditedReview></EditedReview>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          return fetch(
+            `https://painted-lady-server.vercel.app/review/${params.id}`
+          );
+        },
+      },
+      {
+        path: "/addservice",
+        element: <AddService></AddService>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <PageNotFound></PageNotFound>,
+  },
+]);
 
 export default router;
