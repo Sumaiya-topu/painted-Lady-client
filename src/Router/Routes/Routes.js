@@ -39,10 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services/',
-                element: <Services></Services>,
-                loader: () => {
-                    return fetch('https://painted-lady-server.vercel.app/services');
-                }
+                element: <Services></Services>
             },
             {
                 path: '/services/:id',
