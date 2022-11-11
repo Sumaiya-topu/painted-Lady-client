@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import loader from '../../assets/images/loading.gif'
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+
 
 
 const Service = (params) => {
@@ -9,9 +12,16 @@ const Service = (params) => {
     return (
         <div>
             <div className='p-4'>
+
                 <div className='flex justify-center'>
                     <div className=' bg-slate-300 mt-10 w-52 h-52 border rounded-full border-slate-900'>
-                        <img src={picture} className=" w-full p-10 rounded-full" alt="" />
+
+
+                        <PhotoView src={picture}>
+                            <img src={picture} className=" w-full p-10 rounded-full" alt="" />
+                        </PhotoView>
+
+
                     </div>
                 </div>
                 <div className=' lg:p-10 '>

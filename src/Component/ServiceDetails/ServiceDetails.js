@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import UserReview from '../UserReview/UserReview';
 import useTitle from '../../hooks/useTitle';
+import { PhotoView } from 'react-photo-view';
 
 
 
@@ -23,7 +24,9 @@ const ServiceDetails = () => {
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src={picture} className="bg-white max-w-sm rounded-lg shadow-2xl w-1/2" alt='' />
+                    <PhotoView src={picture}>
+                        <img src={picture} className="bg-white max-w-sm rounded-lg shadow-2xl w-1/2" alt='' />
+                    </PhotoView>
                     <div className='w-1/2 pr-10'>
                         <h1 className="text-5xl font-bold">{name}</h1>
                         <div className='flex justify-between my-4'>
