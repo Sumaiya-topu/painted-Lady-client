@@ -12,7 +12,7 @@ const EditedReview = () => {
         const form = event.target;
         const editedReview = form.editedReview.value;
 
-        fetch(`http://localhost:5000/review/${review._id}`, {
+        fetch(`https://painted-lady-server.vercel.app/review/${review._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

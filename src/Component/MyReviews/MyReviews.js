@@ -12,7 +12,7 @@ const MyReviews = () => {
 
         if (agree) {
             //console.log('deleting user id :', user._id) 
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://painted-lady-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -29,7 +29,7 @@ const MyReviews = () => {
 
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/review?userEmail=${user?.email}`)
+        fetch(`https://painted-lady-server.vercel.app/review?userEmail=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -40,7 +40,7 @@ const MyReviews = () => {
         <div className=' h-screen '>
 
             {
-                reviews.length === '0' ? <p className='text-6xl text-center mt-40'>You haven't added any review yet. <br /><span className=' text-rose-600 text-2xl'>To add review go to Services page.</span> </p> : reviews.map(review => <MyReview review={review} handleDelete={handleDelete}></MyReview>)
+                reviews.length === 0 ? <p className='text-6xl text-center mt-40'>You haven't added any review yet. <br /><span className=' text-rose-600 text-2xl'>To add review go to Services page.</span> </p> : reviews.map(review => <MyReview review={review} handleDelete={handleDelete}></MyReview>)
 
             }
         </div>

@@ -11,7 +11,7 @@ const ServiceDetails = () => {
     const [reviews, setReviews] = useState([]);
     const service = useLoaderData();
     useEffect(() => {
-        fetch(`http://localhost:5000/review?postId=${service._id}`)
+        fetch(`https://painted-lady-server.vercel.app/review?postId=${service._id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [service._id])

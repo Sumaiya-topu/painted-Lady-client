@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
-import logo from '../../../assets/icon/painted loady logo-01.svg'
+import logo from '../../../assets/icon/painted loady logo-01.svg';
+import { FaUserAlt } from 'react-icons/fa';
+
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
@@ -48,7 +50,12 @@ const Navbar = () => {
                     </div>
                     <div className="navbar-end hidden lg:flex ">
                         {
-                            user ? <><Link className=' mx-4 my-2 ' to='/myreviews'>My Reviews</Link><img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" />{user?.name}<Link onClick={handleLogOut} to='/' className='text-rose-700 pl-2 pt-2 font-bold '>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
+                            user ? <><Link className=' mx-4 my-2 ' to='/myreviews'>My Reviews</Link>
+                                {
+                                    user.photoURL ? <img className=' h-10 w-10 rounded-full ' src={user?.photoURL} alt="" /> : <FaUserAlt className='h-10 w-10 rounded-full'></FaUserAlt>
+
+                                }
+                                <Link onClick={handleLogOut} to='/' className='text-rose-700 pl-2 pt-2 font-bold '>Log Out</Link></> : <><Link to='/login' className="btn btn-sm btn-outline ">Login</Link >
                             </>
                         }
                     </div>

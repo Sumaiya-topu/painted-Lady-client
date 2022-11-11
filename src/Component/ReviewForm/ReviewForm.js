@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import review from '../../assets/images/review.webp'
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const ReviewForm = () => {
+    const navigate = useNavigate();
     useTitle('Add-review')
     const { user } = useContext(AuthContext);
     const service = useLoaderData();
@@ -22,7 +23,7 @@ const ReviewForm = () => {
             reviewText: form.reviewText.value,
         };
         console.log(userReview);
-        fetch('http://localhost:5000/services/addreview', {
+        fetch('https://painted-lady-server.vercel.app/services/addreview', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -32,9 +33,10 @@ const ReviewForm = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    alert('Review added succesfully.To check your review with others go to previous page');
+                    alert('Review added succesfully.');
                     event.target.reset();
                 }
+                navigate(`/services/${_id}`);
             })
     }
     return (

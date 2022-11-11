@@ -1,4 +1,3 @@
-import AddService from "../../Component/AddService/AddService";
 import Blog from "../../Component/Blog/Blog";
 import EditedReview from "../../Component/EditedReview/EditedReview";
 import Login from "../../Component/Login/Login";
@@ -23,14 +22,14 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => {
-                    return fetch('http://localhost:5000/limitedservice');
+                    return fetch('https://painted-lady-server.vercel.app/limitedservice');
                 }
             },
             {
                 path: '/home',
                 element: <Home></Home>,
                 loader: () => {
-                    return fetch('http://localhost:5000/limitedservice');
+                    return fetch('https://painted-lady-server.vercel.app/limitedservice');
                 }
             },
             {
@@ -41,14 +40,14 @@ const router = createBrowserRouter([
                 path: '/services/',
                 element: <Services></Services>,
                 loader: () => {
-                    return fetch('http://localhost:5000/services');
+                    return fetch('https://painted-lady-server.vercel.app/services');
                 }
             },
             {
                 path: '/services/:id',
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/services/${params.id}`);
+                    return fetch(`https://painted-lady-server.vercel.app/services/${params.id}`);
                 }
             },
             {
@@ -63,7 +62,7 @@ const router = createBrowserRouter([
                 path: '/services/:id/review',
                 element: <PrivateRoute><ReviewForm></ReviewForm></PrivateRoute>,
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/services/${params.id}`);
+                    return fetch(`https://painted-lady-server.vercel.app/services/${params.id}`);
                 }
             },
             {
@@ -74,14 +73,10 @@ const router = createBrowserRouter([
                 path: '/myreviews/editReview/:id',
                 element: <PrivateRoute><EditedReview></EditedReview></PrivateRoute>,
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/review/${params.id}`)
+                    return fetch(`https://painted-lady-server.vercel.app/review${params.id}`)
                 }
-
             },
-            {
-                path: '/addservice',
-                element: <AddService></AddService>,
-            }
+
         ]
 
     }

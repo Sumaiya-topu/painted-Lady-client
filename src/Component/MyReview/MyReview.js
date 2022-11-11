@@ -11,7 +11,7 @@ const MyReviews = (params) => {
     console.log(post_id);
     const [service, setServices] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${post_id}`)
+        fetch(`https://painted-lady-server.vercel.app/services/${post_id}`)
             .then(res => res.json())
             .then(data => setServices(data));
     }, [post_id])

@@ -21,7 +21,7 @@ const Service = (params) => {
                         <p className='text-rose-600 font-bold'><FaStar className=' ml-1 '></FaStar><span className='text-slate-400'>{rating}</span></p>
                     </div>
                     <p className='lg:px-10 text-center'>{details.substring(0, 100)}... <Link to={`/services/${_id}`} className='text-rose-600'>See more</Link></p>
-                    <div className='text-center p-10'><Link to={`/services/${_id}`} ><button className="btn btn-active btn-primary text-center text-white rounded-sm ">Get Appointment</button></Link></div>
+                    <div className='text-center p-10'><Link to={`/services/${_id}`} ><button className="btn btn-active btn-primary text-center text-white rounded-sm ">See Reviews</button></Link></div>
 
                 </div>
             </div>
