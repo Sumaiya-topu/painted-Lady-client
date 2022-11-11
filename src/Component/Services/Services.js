@@ -26,7 +26,10 @@ const Services = () => {
             ))}
           </div>
           <div className="text-center p-5">
-            <Link className="btn btn-outline" to="/addservice">
+            <Link
+              className="btn btn-outline animate-bounce w-48 h-12"
+              to="/addservice"
+            >
               Add Service
             </Link>
           </div>{" "}

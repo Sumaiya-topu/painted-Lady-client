@@ -46,7 +46,9 @@ const ServiceDetails = () => {
       <div className="text-center p-10">
         <p>Did you get our services? Share your thoughts</p>
         <Link to={`/services/${_id}/review`}>
-          <button className="btn btn-outline btn-success">Add Review</button>
+          <button className="btn btn-outline btn-success animate-bounce w-48 h-12 mt-10">
+            Add Review
+          </button>
         </Link>
       </div>
       <div>
