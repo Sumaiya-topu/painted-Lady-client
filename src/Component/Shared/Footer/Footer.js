@@ -3,7 +3,7 @@ import logo from '../../../assets/icon/painted loady logo-01.png'
 
 const Footer = () => {
     return (
-        <footer className="footer  p-10 bg-neutral text-neutral-content">
+        <footer className="footer mt-36 p-10 bg-neutral text-neutral-content">
             <div>
                 <img className=' h-20' src={logo} alt="" />
                 <p>PAINTED-Lady<br />Providing reliable services.</p>

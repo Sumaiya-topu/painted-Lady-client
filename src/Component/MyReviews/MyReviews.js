@@ -37,7 +37,7 @@ const MyReviews = () => {
             })
     }, [user.email])
     return (
-        <div className=' h-screen '>
+        <div className=' bg-cover '>
 
             {
                 reviews.length === 0 ? <p className='text-6xl text-center mt-40'>You haven't added any review yet. <br /><span className=' text-rose-600 text-2xl'>To add review go to Services page.</span> </p> : reviews.map(review => <MyReview review={review} handleDelete={handleDelete}></MyReview>)

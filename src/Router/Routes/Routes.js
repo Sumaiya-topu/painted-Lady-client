@@ -1,3 +1,4 @@
+import AddService from "../../Component/AddService/AddService";
 import Blog from "../../Component/Blog/Blog";
 import EditedReview from "../../Component/EditedReview/EditedReview";
 import Login from "../../Component/Login/Login";
@@ -73,9 +74,13 @@ const router = createBrowserRouter([
                 path: '/myreviews/editReview/:id',
                 element: <PrivateRoute><EditedReview></EditedReview></PrivateRoute>,
                 loader: async ({ params }) => {
-                    return fetch(`https://painted-lady-server.vercel.app/review${params.id}`)
+                    return fetch(`https://painted-lady-server.vercel.app/review/${params.id}`)
                 }
             },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>
+            }
 
         ]
 
