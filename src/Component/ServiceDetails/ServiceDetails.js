@@ -27,7 +27,7 @@ const ServiceDetails = () => {
               alt=""
             />
           </PhotoView>
-          <div className="w-1/2 pr-10">
+          <div className="p-5 lg:w-1/2 lg:pr-10">
             <h1 className="text-5xl font-bold">{name}</h1>
             <div className="flex justify-between my-4">
               <p className="text-rose-600 text-3xl">{price}</p>
@@ -36,8 +36,8 @@ const ServiceDetails = () => {
                 <span className="text-slate-400">{rating}</span>
               </p>
             </div>
-            <p className="py-6 text-justify">{details}</p>
-            <button className="btn btn-primary text-rose-900 font-bold">
+            <p className="lg:py-6 text-justify">{details}</p>
+            <button className="mt-5 lg:mt-0 btn btn-primary text-rose-900 font-bold">
               Get Appointment
             </button>
           </div>
