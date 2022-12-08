@@ -1,4 +1,4 @@
-# Website name: Code-Camp
+# Website name: Painted-Lady
 
 Live website link : https://painted-lady.web.app/
 
